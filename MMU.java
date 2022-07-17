@@ -14,9 +14,6 @@ public class MMU {
 
     public boolean loadProcessIntoRAM(Process p) {
         boolean fit = false;
-        /* TODO: you need to add some code here
-         * Hint: this should return true if the process was able to fit into memory
-         * and false if not */
 
         if (!p.getPCB().getPlaced()) {
             if (algorithm.fitProcess(p, currentlyUsedMemorySlots) != -1) {
