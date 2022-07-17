@@ -15,8 +15,6 @@ public class ProcessControlBlock {
         this.state = ProcessState.NEW;
         this.startTimes = new ArrayList<Integer>();
         this.stopTimes = new ArrayList<Integer>();
-        /* TODO: you need to add some code here
-         * Hint: every process should get a unique PID */
         
         int PID_MAX_LIMIT= 32768; // the maximum value of a PID for 32-bit machine
         
@@ -33,11 +31,7 @@ public class ProcessControlBlock {
         return this.state;
     }
     
-    public void setState(ProcessState state, int currentClockTime) {
-        /* TODO: you need to add some code here
-         * Hint: update this.state, but also include currentClockTime
-         * in startTimes/stopTimes */
-         
+    public void setState(ProcessState state, int currentClockTime) {         
          if(state.equals(ProcessState.READY)){
              if(this.state.equals(ProcessState.RUNNING))
                  this.stopTimes.add(currentClockTime);
